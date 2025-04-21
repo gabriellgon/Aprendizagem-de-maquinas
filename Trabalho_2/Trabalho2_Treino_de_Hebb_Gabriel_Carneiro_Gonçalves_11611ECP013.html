@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Meta tags Obrigatórias -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <script type="text/JavaScript" src="Script/CalculoDosPesos.js"></script>
+
+        <title>Hebb.</title>
+
+        <style type="text/css">
+        
+                    
+            #visor {
+                background-color: #ffffff;
+                text-align: left;
+            }
+
+            table {
+                margin: 0 auto 0 auto;
+            }
+
+            form fieldset {
+                margin: 100px auto 100px auto;
+                width: 70%;
+                border: solid black 3px;
+                padding: 1%;
+                margin-bottom: 10px;
+            }
+
+            form input {
+                width: 100%;
+                border: solid rgb(0, 0, 0) 1px;
+                font-size: 11px;
+                margin-bottom: 10px;
+            }
+            form{
+                margin-bottom: 15rem;
+            }
+            
+
+        </style>
+    </head>
+  
+    <body>
+
+        <form name="Entrada">
+            
+            <fieldset>
+
+                <div class="container">
+
+                    <table id="saidaEsperada" class="table">
+
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Primeira Entrada</th>
+                                <th scope="col">Segunda Entrada</th>
+                                <th scope="col">Saída Desejada</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="Binario1">
+                                            <option>Saída desejada...</option>
+                                            <option name="saida" value="1" >1</option>
+                                            <option name="saida" value="-1" >-1</option>                                           
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>-1</td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="Binario2">
+                                            <option>Saída desejada...</option>
+                                            <option name="saida" value="1" >1</option>
+                                            <option name="saida" value="-1" >-1</option>                                            
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>-1</td>
+                                <td>1</td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="Binario3">
+                                            <option>Saída desejada...</option>
+                                            <option name="saida" value="1" >1</option>
+                                            <option name="saida" value="-1" >-1</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>-1</td>
+                                <td>-1</td>
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control" id="Binario4">
+                                            <option>Saída desejada...</option>
+                                            <option name="saida" value="1" >1</option>
+                                            <option name="saida" value="-1" >-1</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                   <a  href="#resultado"  class="btn btn-dark" onclick= "selecao()" >Calcula</a>
+                                </td>
+                            </tr> 
+
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </form>
+        
+        <form name="Resultados"  id="resultado">
+          
+            <fieldset>
+  
+                <div class="container">
+  
+                    <table class="table">
+  
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Resultados</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Primeira Entrada</th>
+                                <th scope="col">Segunda Entrada</th>
+                                <th scope="col">Saída Esperada</th>
+                                <th scope="col">Saída calculada</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><input type="text" id="visor10" class="form-control" readonly></td>
+                                <td><input type="text" id="visor1" class="form-control" readonly></td>
+                            </tr>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>-1</td>
+                                <td><input type="text" id="visor11" class="form-control" readonly></td>
+                                <td><input type="text" id="visor2" class="form-control" readonly></td>
+                            </tr>
+  
+                            <tr>
+                                <td>-1</td>
+                                <td>1</td>
+                                <td><input type="text" id="visor12" class="form-control" readonly></td>
+                                <td><input type="text" id="visor3" class="form-control" readonly></td>
+                            </tr>
+    
+                            <tr>
+                                <td>-1</td>
+                                <td>-1</td>
+                                <td><input type="text" id="visor13" class="form-control" readonly></td>
+                                <td><input type="text" id="visor4" class="form-control" readonly></td>
+                            </tr>
+    
+                            <tr>
+                                <th scope="col">Peso 1:</th>
+                                <td><input type="text" id="visor5" class="form-control" readonly></td>
+                            </tr>
+    
+                            <tr>
+                                <th scope="col">Peso 2:</th>
+                                <td><input type="text" id="visor6" class="form-control" readonly></td>
+                            </tr>
+  
+                            <tr>
+                                <th scope="col">b:</th>
+                                <td><input type="text" id="visor7" class="form-control" readonly></td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </form>
+        
+      <!-- JavaScript (Opcional) -->
+      <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
